@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>דף נחיתה - חנות האינטרנט שלי</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        emailjs.init("PUBLIC_KEY");
+    </script>
     <style>
         /* איפוס סגנונות */
         * {
@@ -111,7 +115,14 @@
             event.preventDefault();
             const email = document.getElementById('email').value;
             if (email) {
-                alert(`תודה שנרשמת! נשלח עדכונים למייל: ${email}`);
+                emailjs.send("SERVICE_ID", "TEMPLATE_ID", {
+                    to_email: email
+                }, "PUBLIC_KEY").then(() => {
+                    alert("תודה שנרשמת! נשלח עדכונים למייל שלך.");
+                }).catch((error) => {
+                    console.error("שגיאה בשליחת המייל:", error);
+                    alert("אירעה שגיאה בשליחת המייל.");
+                });
             } else {
                 alert('נא להזין כתובת מייל תקינה.');
             }
