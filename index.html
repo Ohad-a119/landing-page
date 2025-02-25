@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>דף נחיתה - חנות האינטרנט שלי</title>
+    <style>
+        /* איפוס סגנונות */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            direction: rtl;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+        header h1 {
+            margin-bottom: 10px;
+        }
+        #main {
+            padding: 20px;
+        }
+        .product {
+            background: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .product img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        button {
+            background: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #218838;
+        }
+        #cta {
+            background: #007bff;
+            color: #fff;
+            padding: 20px;
+        }
+        #cta input {
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ברוכים הבאים לחנות האינטרנטית שלנו!</h1>
+        <p>המוצרים הכי איכותיים במחירים שלא תמצאו בשום מקום אחר.</p>
+    </header>
+
+    <section id="main">
+        <div class="product">
+            <img src="https://via.placeholder.com/300" alt="מוצר לדוגמה">
+            <h2>מוצר מדהים</h2>
+            <p>תיאור קצר של המוצר והמאפיינים העיקריים שלו.</p>
+            <button id="buyButton">קנה עכשיו</button>
+        </div>
+    </section>
+
+    <section id="cta">
+        <h2>הצטרף לניוזלטר שלנו!</h2>
+        <form id="newsletterForm">
+            <input type="email" id="email" placeholder="הכנס את המייל שלך" required>
+            <button type="submit">הירשם</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2023 חנות האינטרנט שלי. כל הזכויות שמורות.</p>
+    </footer>
+
+    <script>
+        document.getElementById('buyButton').addEventListener('click', function() {
+            alert('תודה על הרכישה! נחזור אליך בהקדם.');
+        });
+
+        document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            if (email) {
+                alert(`תודה שנרשמת! נשלח עדכונים למייל: ${email}`);
+            } else {
+                alert('נא להזין כתובת מייל תקינה.');
+            }
+        });
+    </script>
+</body>
+</html>
